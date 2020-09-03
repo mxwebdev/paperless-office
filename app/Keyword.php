@@ -11,13 +11,13 @@ class Keyword extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'color'];
 
     /**
      * Get the documents that belong to the keyword.
      */
     public function documents()
     {
-        return $this->hasMany('App\Document');
+        return $this->belongsToMany('App\Document');
     }
 }

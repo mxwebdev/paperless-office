@@ -25,11 +25,11 @@ mix.sass('resources/sass/style.scss', 'public/css');
 //************** SCRIPTS ****************** 
 // general scripts
 mix.copy('node_modules/@coreui/utils/dist/coreui-utils.js', 'public/js');
-mix.copy('node_modules/axios/dist/axios.min.js', 'public/js'); 
+mix.copy('node_modules/axios/dist/axios.min.js', 'public/js');
 //mix.copy('node_modules/pace-progress/pace.min.js', 'public/js');  
-mix.copy('node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js', 'public/js'); 
+mix.copy('node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js', 'public/js');
 // views scripts
-mix.copy('node_modules/chart.js/dist/Chart.min.js', 'public/js'); 
+mix.copy('node_modules/chart.js/dist/Chart.min.js', 'public/js');
 mix.copy('node_modules/@coreui/chartjs/dist/js/coreui-chartjs.bundle.js', 'public/js');
 
 mix.copy('node_modules/cropperjs/dist/cropper.js', 'public/js');
@@ -45,6 +45,12 @@ mix.js('resources/js/coreui/menu-create.js', 'public/js');
 mix.js('resources/js/coreui/menu-edit.js', 'public/js');
 mix.js('resources/js/coreui/media.js', 'public/js');
 mix.js('resources/js/coreui/media-cropp.js', 'public/js');
+
+// tagify
+mix.js('resources/js/tagify/tagify.js', 'public/js');
+
+
+
 //*************** OTHER ****************** 
 //fonts
 mix.copy('node_modules/@coreui/icons/fonts', 'public/fonts');

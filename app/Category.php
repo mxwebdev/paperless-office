@@ -18,6 +18,6 @@ class Category extends Model
      */
     public function documents()
     {
-        return $this->hasMany('App\Document');
+        return $this->belongsToMany('App\Document');
     }
 }

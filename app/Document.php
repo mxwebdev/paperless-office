@@ -11,14 +11,14 @@ class Document extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'description', 'date', 'archive', 'user_id', 'path'];
 
     /**
      * Get the categories that belong to the document.
      */
     public function categories()
     {
-        return $this->hasMany('App\Category');
+        return $this->belongsToMany('App\Category');
     }
 
     /**
@@ -26,6 +26,6 @@ class Document extends Model
      */
     public function keywords()
     {
-        return $this->hasMany('App\Keyword');
+        return $this->belongsToMany('App\Keyword');
     }
 }

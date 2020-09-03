@@ -144,7 +144,7 @@ class MenusTableSeeder extends Seeder
         /* Documents Section */
         $this->insertTitle('user,admin', 'Documents');
         $this->insertLink('user,admin', 'Inbox', '/documents/inbox', 'cil-inbox');
-        $this->insertLink('user,admin', 'Archive', '/documents/archiv', 'cil-file');
+        $this->insertLink('user,admin', 'Archive', '/documents', 'cil-file');
         $this->insertLink('user,admin', 'Categories', '/categories', 'cil-folder-open');
         $this->insertLink('user,admin', 'Keywords', '/keywords', 'cil-paperclip');
 

@@ -17,7 +17,7 @@ class CreateKeywordsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('color');
+            $table->string('color')->nullable();
         });
     }
 

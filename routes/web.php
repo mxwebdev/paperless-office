@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\DocumentController;
+
 Route::group(['middleware' => ['get.menu']], function () {
     Route::get('/', function () {
         return view('dashboard.homepage');
@@ -160,6 +162,18 @@ Route::group(['middleware' => ['get.menu']], function () {
         'edit'      => 'keyword.edit',
         'update'    => 'keyword.update',
         'destroy'   => 'keyword.destroy'
+    ]);
+
+    Route::get('documents/inbox', 'DocumentController@inbox')->name('document.inbox');
+    Route::get('documents/archive/{inboxDocument}/{lastModified}', 'DocumentController@archive')->name('document.archive');
+    Route::resource('documents/', 'DocumentController')->names([
+        'index'     => 'document.index',
+        'create'    => 'document.create',
+        'store'     => 'document.store',
+        'show'      => 'document.show',
+        'edit'      => 'document.edit',
+        'update'    => 'document.update',
+        'destroy'   => 'document.destroy'
     ]);
 
     /* End Custom Routes */
