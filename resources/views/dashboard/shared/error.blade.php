@@ -10,3 +10,14 @@
 </div>
 
 @endif
+
+@if(session()->has('msg-success'))
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session()->get('msg-success') }}
+
+    <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">×</span></button>
+</div>
+
+@endif

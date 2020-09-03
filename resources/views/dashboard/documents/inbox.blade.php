@@ -6,6 +6,9 @@
     <div class="fade-in">
         <div class="row">
             <div class="col-lg-12">
+
+                @include('dashboard.shared.error')
+
                 <div class="card">
                     <div class="card-header"><i class="fa fa-align-justify"></i> Document Inbox</div>
                     <div class="card-body">
