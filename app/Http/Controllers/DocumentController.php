@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
+use App\Document;
 
 class DocumentController extends Controller
 {
@@ -15,6 +16,10 @@ class DocumentController extends Controller
      */
     public function inbox()
     {
+        // Get available keywords
+        $keywords = \App\Keyword::all();
+
+        // Get all files in inbox folder
         $inboxDocuments = Storage::allFiles('inbox');
         $inboxDocumentsWithMeta = array();
 
@@ -40,7 +45,7 @@ class DocumentController extends Controller
             array_push($inboxDocumentsWithMeta, $array);
         }
 
-        return view('dashboard.documents.inbox', compact('inboxDocumentsWithMeta'));
+        return view('dashboard.documents.inbox', compact('inboxDocumentsWithMeta', 'keywords'));
     }
 
     /**
@@ -63,7 +68,9 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        //
+        $documents = Document::orderBy('created_at', 'desc')->paginate(10);
+
+        return view('dashboard.documents.index', compact('documents'));
     }
 
     /**

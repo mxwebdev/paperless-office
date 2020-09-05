@@ -27,11 +27,11 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="name-input">Name (optional)</label>
+                                <label class="col-md-3 col-form-label" for="name-input">Name</label>
                                 <div class="col-md-9">
                                     <input class="form-control {{ $errors->has('name-input') ? 'is-invalid' : '' }}"
                                         id="name-input" type="text" name="name-input"
-                                        placeholder="Give your document a custom name."
+                                        placeholder="Name your document... (optional)"
                                         value="{{ old('name-input') }}"><span class="help-block"></span>
                                 </div>
                             </div>
@@ -54,30 +54,29 @@
                             </div> --}}
 
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="date-input">Date (optional)</label>
+                                <label class="col-md-3 col-form-label" for="date-input">Date</label>
                                 <div class="col-md-9">
                                     <input class="form-control {{ $errors->has('date-input') ? 'is-invalid' : '' }}"
                                         id="date-input" type="date" name="date-input" placeholder="date"
-                                        value="{{ date('Y-m-d', strtotime($lastModified)) }}"><span
+                                        value="{{ old('date-input', date('Y-m-d', strtotime($lastModified))) }}"><span
                                         class="help-block">If no date is selected, the document's original date
                                         will be
                                         used.</span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="description-input">Description
-                                    (optional)</label>
+                                <label class="col-md-3 col-form-label" for="description-input">Description</label>
                                 <div class="col-md-9">
                                     <textarea
                                         class="form-control {{ $errors->has('description-input') ? 'is-invalid' : '' }}"
                                         id="description-input" name="description-input" rows="5"
-                                        placeholder="Your document's description..."
+                                        placeholder="Your document's description... (optional)"
                                         value="">{{ old('description-input') }}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="category-select">Category (optional)</label>
+                                <label class="col-md-3 col-form-label" for="category-select">Category</label>
                                 <div class="col-md-9">
                                     <select
                                         class="form-control {{ $errors->has('category-select') ? 'is-invalid' : '' }}"
