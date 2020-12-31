@@ -30,7 +30,13 @@
 
                                 @foreach ($documents as $document)
                                 <tr>
-                                    <td></td>
+                                    <td>
+
+
+                                        <a href="{{ asset($document->path) }}">{{ asset($document->path) }}</a>
+
+
+                                    </td>
                                     <td>{{ Carbon\Carbon::parse($document->date)->isoFormat('DD.MM.Y') }}</td>
                                     <td>{{ $document->name }}</td>
                                     <td>
